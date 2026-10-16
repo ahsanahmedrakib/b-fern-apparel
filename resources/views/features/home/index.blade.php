@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'Apparel Liquidation & Brand Partnerships')
+@section('title', 'Apparel Liquidation and Brand Partnerships')
 
 @section('description', config('bfern.short_description'))
 
 @section('content')
     {{-- Hero --}}
     <section class="relative overflow-hidden bg-ink-950 text-paper-100 weave-pattern">
-        <div class="pointer-events-none absolute -right-40 -top-40 size-[32rem] rounded-full bg-navy-600/25 blur-3xl" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute -bottom-52 -left-24 size-[28rem] rounded-full bg-navy-500/10 blur-3xl" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute -right-40 -top-40 size-128 rounded-full bg-navy-600/25 blur-3xl" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute -bottom-52 -left-24 size-112 rounded-full bg-navy-500/10 blur-3xl" aria-hidden="true"></div>
 
         <div class="container-page relative grid items-center gap-16 py-20 lg:grid-cols-12 lg:py-28">
             <div class="lg:col-span-7 fade-up">
@@ -39,7 +39,7 @@
             <div class="lg:col-span-5" data-reveal>
                 <div class="grid grid-cols-2 gap-4">
                     @foreach (config('bfern.stats') as $stat)
-                        <div class="card-dark border-paper-100/15 bg-paper-100/[0.06] backdrop-blur">
+                        <div class="card-dark border-paper-100/15 bg-paper-100/6 backdrop-blur">
                             <p class="font-display text-4xl font-semibold text-paper-50">{{ $stat['value'] }}</p>
                             <p class="mt-2 text-sm leading-snug text-paper-300/80">{{ $stat['label'] }}</p>
                         </div>
@@ -197,7 +197,7 @@
             <div class="lg:col-span-7">
                 <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3">
                     @foreach (config('bfern.international_offices') as $office)
-                        <li class="rounded-2xl border border-paper-100/15 bg-paper-100/[0.05] px-5 py-4">
+                        <li class="rounded-2xl border border-paper-100/15 bg-paper-100/5 px-5 py-4">
                             <p class="font-display text-lg font-semibold text-paper-50">{{ $office['country'] }}</p>
                             <p class="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-navy-300">{{ $office['region'] }}</p>
                         </li>
