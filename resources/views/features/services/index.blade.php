@@ -95,7 +95,7 @@
                 @endphp
 
                 @foreach ($groups as $group)
-                    <article class="card-dark border-paper-100/15 bg-paper-100/[0.05] hover:border-navy-300/40">
+                    <article class="card-dark border-paper-100/15 bg-paper-100/5 hover:border-navy-300/40">
                         <h3 class="font-display text-xl font-semibold text-paper-50">{{ $group['title'] }}</h3>
                         <p class="mt-3 text-sm leading-relaxed text-paper-300/80">{{ $group['body'] }}</p>
                     </article>

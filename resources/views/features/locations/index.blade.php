@@ -65,7 +65,7 @@
             </div>
 
             {{-- Showroom feature --}}
-            <div class="mt-14 overflow-hidden rounded-3xl border border-paper-100/15 bg-paper-100/[0.06]">
+            <div class="mt-14 overflow-hidden rounded-3xl border border-paper-100/15 bg-paper-100/6">
                 <div class="grid lg:grid-cols-12">
                     <div class="p-8 lg:col-span-7 lg:p-12">
                         <p class="eyebrow text-navy-300">New York Showroom</p>
@@ -88,7 +88,7 @@
 
             <div class="mt-6 grid gap-5 lg:grid-cols-3">
                 @foreach (config('bfern.us_locations') as $location)
-                    <article class="card-dark border-paper-100/15 bg-paper-100/[0.05]">
+                    <article class="card-dark border-paper-100/15 bg-paper-100/5">
                         <p class="eyebrow text-navy-300">{{ $location['type'] }}</p>
                         <h3 class="mt-3 font-display text-2xl font-semibold text-paper-50">{{ $location['city'] }}</h3>
                         @if ($location['address'])

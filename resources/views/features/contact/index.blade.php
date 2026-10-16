@@ -41,7 +41,7 @@
                     @csrf
 
                     {{-- Honeypot: hidden from users, catches bots --}}
-                    <div class="absolute -left-[9999px] top-0" aria-hidden="true">
+                    <div class="absolute left-[-9999px] top-0" aria-hidden="true">
                         <label for="website">Leave this field empty</label>
                         <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
                     </div>
