@@ -127,3 +127,11 @@ Before relying on a package's API, confirm its installed version:
 - Any production setup (migrations, seeding/admin user creation, APP_KEY) must be doable through cPanel tools only: phpMyAdmin SQL import, `.env` editing via File Manager, and a pre-built frontend that is uploaded (no server-side build step).
 - For tasks requiring commands, provide an equivalent that works without a terminal (e.g. SQL to import via phpMyAdmin).
 
+# Environments
+
+- **Local dev:** XAMPP MySQL/MariaDB on `127.0.0.1:3306` (`.env`: `DB_CONNECTION=mysql`, `DB_DATABASE=apparel`, `DB_USERNAME=root`, empty password). A copy of XAMPP's MySQL must be running for the app/tests hitting the DB to work.
+- **Production:** cPanel (see Hosting note above). MySQL via phpMyAdmin import.
+- **Also deployed on:** Clever Cloud (`cleverapps`), which injects `MYSQL_ADDON_*` env vars.
+- `config/database.php` is universal: standard `DB_*` win, then host-provided vars (`MYSQL_ADDON_*`, `MYSQLHOST`, `DATABASE_URL`, etc.), else `sqlite`. Don't hardcode a single platform's connection.
+- Tests (`phpunit.xml`) always use in-memory sqlite, independent of the local `.env`.
+
