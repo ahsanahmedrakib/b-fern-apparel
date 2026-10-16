@@ -130,10 +130,13 @@ Before relying on a package's API, confirm its installed version:
 # Environments
 
 - **Local dev:** XAMPP MySQL/MariaDB on `127.0.0.1:3306` (`.env`: `DB_CONNECTION=mysql`, `DB_DATABASE=apparel`, `DB_USERNAME=root`, empty password). A copy of XAMPP's MySQL must be running for the app/tests hitting the DB to work.
-- **Production:** cPanel (see Hosting note above). MySQL via phpMyAdmin import.
+- **Production (cPanel):** MySQL via phpMyAdmin import. Frontend assets are built locally (`npm run build`) and uploaded manually (zip), since `public/build` is git-ignored.
 - **Also deployed on:** Clever Cloud (`cleverapps`), which injects `MYSQL_ADDON_*` env vars.
-  - Deploy hooks (not SSH): set `CC_POST_BUILD_HOOK="php artisan migrate --force"` so schema is created on deploy, and `LOG_CHANNEL=stderr` so Laravel exceptions show in the Clever Cloud logs (default `stack`/`single` writes to `storage/logs` and is invisible there).
-  - Built frontend assets are committed (`public/build` is intentionally not git-ignored); no server-side `npm run build`.
+  - Deploy via git push (no SSH). Required env vars:
+    - `CC_POST_BUILD_HOOK="npm ci && npm run build && php artisan migrate --force"` — builds the frontend and creates the schema on every deploy. (`public/build` is git-ignored, so the build must happen here.)
+    - `LOG_CHANNEL=stderr` — so Laravel exceptions show in the Clever Cloud logs (default `stack`/`single` writes to `storage/logs` and is invisible there).
+    - Set `CC_NODE_VERSION` (e.g. `22`) if the asset build fails on the build instance's default Node.
+  - Because Tailwind v4 only emits classes that exist at build time, the committed source is what matters; never commit `public/build`.
 - `config/database.php` is universal: standard `DB_*` win, then host-provided vars (`MYSQL_ADDON_*`, `MYSQLHOST`, `DATABASE_URL`, etc.), else `sqlite`. Don't hardcode a single platform's connection.
 - Tests (`phpunit.xml`) always use in-memory sqlite, independent of the local `.env`.
 
