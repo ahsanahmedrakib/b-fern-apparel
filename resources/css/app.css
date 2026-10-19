@@ -34,6 +34,11 @@
         -webkit-text-size-adjust: 100%;
     }
 
+    :root {
+        --swiper-theme-color: var(--color-navy-600);
+        --swiper-pagination-bullet-inactive-color: var(--color-ink-800);
+    }
+
     body {
         text-rendering: optimizeLegibility;
     }

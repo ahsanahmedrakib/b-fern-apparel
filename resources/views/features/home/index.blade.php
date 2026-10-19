@@ -236,6 +236,8 @@
         </div>
     </section>
 
+    @include('features.teams.swiper', ['teamMembers' => $teamMembers])
+
     @include('partials.cta', [
         'title' => 'Ready to move apparel merchandise?',
         'description' => 'Connect with a team that has spent more than two decades matching leading brands with the right buyers.',

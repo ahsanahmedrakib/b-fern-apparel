@@ -2,11 +2,14 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 class SitePagesTest extends TestCase
 {
+    use RefreshDatabase;
+
     /**
      * @return array<string, array{string}>
      */
@@ -17,6 +20,7 @@ class SitePagesTest extends TestCase
             'about' => ['about'],
             'services' => ['services'],
             'locations' => ['locations'],
+            'team' => ['team'],
             'contact' => ['contact.index'],
         ];
     }
@@ -53,6 +57,7 @@ class SitePagesTest extends TestCase
             ->assertSee(route('about'), false)
             ->assertSee(route('services'), false)
             ->assertSee(route('locations'), false)
+            ->assertSee(route('team'), false)
             ->assertSee(route('contact.index'), false);
     }
 }

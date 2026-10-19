@@ -1,4 +1,5 @@
 import { initContactValidation } from './features/contact/validation';
+import { initTeamSwipers } from './features/teams/swiper';
 
 function initMobileNav() {
     const toggle = document.getElementById('mobile-nav-toggle');
@@ -78,5 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileNav();
     initHeaderShadow();
     initReveal();
+    initTeamSwipers();
     initContactValidation();
 });

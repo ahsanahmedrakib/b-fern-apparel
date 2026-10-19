@@ -3,6 +3,7 @@
         ['label' => 'About', 'route' => 'about'],
         ['label' => 'What We Do', 'route' => 'services'],
         ['label' => 'Global Presence', 'route' => 'locations'],
+        ['label' => 'Our Team', 'route' => 'team'],
         ['label' => 'Contact', 'route' => 'contact.index'],
     ];
 @endphp

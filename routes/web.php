@@ -16,5 +16,6 @@ require base_path('routes/features/home.php');
 require base_path('routes/features/about.php');
 require base_path('routes/features/services.php');
 require base_path('routes/features/locations.php');
+require base_path('routes/features/teams.php');
 require base_path('routes/features/contact.php');
 require base_path('routes/features/admin.php');

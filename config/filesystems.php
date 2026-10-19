@@ -47,6 +47,20 @@ return [
             'report' => false,
         ],
 
+        /*
+         * Team photos live directly under public/ so they can be uploaded
+         * from the admin panel without needing `storage:link` (unavailable
+         * on cPanel shared hosting with no terminal access).
+         */
+        'teams' => [
+            'driver' => 'local',
+            'root' => public_path('images/teams'),
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/images/teams',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

@@ -2,6 +2,7 @@
     $adminLinks = [
         ['label' => 'Dashboard', 'route' => 'admin.dashboard', 'pattern' => 'admin.dashboard'],
         ['label' => 'Messages', 'route' => 'admin.messages.index', 'pattern' => 'admin.messages.*'],
+        ['label' => 'Team', 'route' => 'admin.team.index', 'pattern' => 'admin.team.*'],
     ];
 @endphp
 
