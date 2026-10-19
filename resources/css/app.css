@@ -52,6 +52,11 @@
         outline: 2px solid var(--color-navy-600);
         outline-offset: 3px;
     }
+
+    button:not(:disabled),
+    [role='button']:not(:disabled) {
+        cursor: pointer;
+    }
 }
 
 @layer components {
@@ -201,3 +206,22 @@
         transition: none;
     }
 }
+
+/*
+ * Equal-height team slides. Swiper ships unlayered CSS that sets
+ * `.swiper-slide { height: 100% }`, which would otherwise override
+ * Tailwind's utility classes. These unlayered, higher-specificity rules
+ * let the slides stretch to the tallest card in the row.
+ */
+[data-team-swiper] .swiper-wrapper {
+    align-items: stretch;
+}
+
+[data-team-swiper] .swiper-slide {
+    height: auto;
+}
+
+[data-team-swiper] .swiper-slide > * {
+    height: 100%;
+}
+

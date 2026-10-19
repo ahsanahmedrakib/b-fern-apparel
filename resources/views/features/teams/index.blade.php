@@ -19,9 +19,9 @@
                     <p class="mt-2 text-sm text-ink-800/70">Please check back shortly.</p>
                 </div>
             @else
-                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <div class="grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     @foreach ($teamMembers as $member)
-                        <div data-reveal>
+                        <div class="h-full" data-reveal>
                             <x-team-card :member="$member" />
                         </div>
                     @endforeach

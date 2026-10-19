@@ -25,9 +25,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::delete('messages/{contactMessage}', [MessageController::class, 'destroy'])->name('messages.destroy');
 
         Route::get('team', [TeamMemberController::class, 'index'])->name('team.index');
-        Route::get('team/create', [TeamMemberController::class, 'create'])->name('team.create');
         Route::post('team', [TeamMemberController::class, 'store'])->name('team.store');
-        Route::get('team/{teamMember}/edit', [TeamMemberController::class, 'edit'])->name('team.edit');
         Route::put('team/{teamMember}', [TeamMemberController::class, 'update'])->name('team.update');
         Route::delete('team/{teamMember}', [TeamMemberController::class, 'destroy'])->name('team.destroy');
     });

@@ -8,21 +8,22 @@ use App\Features\Shared\Http\Controllers\Controller;
 use App\Features\Teams\Models\TeamMember;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class TeamMemberController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
-        return view('features.admin.team.index', [
-            'teamMembers' => TeamMember::query()->ordered()->paginate(12),
-        ]);
-    }
+        $editingMember = null;
 
-    public function create(): View
-    {
-        return view('features.admin.team.create', [
-            'teamMember' => new TeamMember,
+        if ($editingId = $request->old('team_member_id')) {
+            $editingMember = TeamMember::query()->find($editingId);
+        }
+
+        return view('features.admin.team.index', [
+            'teamMembers' => TeamMember::query()->ordered()->paginate(12)->withQueryString(),
+            'editingMember' => $editingMember,
         ]);
     }
 
@@ -37,13 +38,6 @@ class TeamMemberController extends Controller
         return redirect()
             ->route('admin.team.index')
             ->with('status', 'Team member added.');
-    }
-
-    public function edit(TeamMember $teamMember): View
-    {
-        return view('features.admin.team.edit', [
-            'teamMember' => $teamMember,
-        ]);
     }
 
     public function update(UpdateTeamMemberRequest $request, TeamMember $teamMember): RedirectResponse

@@ -19,7 +19,7 @@
 
             <div class="mt-12" data-team-swiper>
                 <div class="swiper">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper items-stretch">
                         @foreach ($teamMembers as $member)
                             <div class="swiper-slide h-auto">
                                 <x-team-card :member="$member" />

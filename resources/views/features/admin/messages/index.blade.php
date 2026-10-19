@@ -119,9 +119,8 @@
         @endforelse
     </div>
 
-    @if ($messages->hasPages())
-        <div class="mt-6">
-            {{ $messages->links() }}
-        </div>
-    @endif
+    {{-- Pagination --}}
+    <div class="mt-6">
+        {{ $messages->links('vendor.pagination.admin') }}
+    </div>
 @endsection
