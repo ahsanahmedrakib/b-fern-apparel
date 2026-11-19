@@ -9,12 +9,14 @@
         'eyebrow' => 'Our People',
         'title' => 'Meet the team',
         'description' => 'Behind every shipment is a team that knows the apparel market — coordinating sourcing, quality control, and logistics across our international network.',
+        'image' => 'images/site/team-meeting.jpg',
+        'imageAlt' => 'B.Fern Apparel team collaborating in a modern office',
     ])
 
     <section class="bg-paper-50 py-20 lg:py-28">
         <div class="container-page">
             @if ($teamMembers->isEmpty())
-                <div class="rounded-3xl border border-dashed border-paper-300 bg-white p-12 text-center">
+                <div class="rounded-3xl border border-dashed border-paper-300 bg-white p-12 text-center" data-reveal>
                     <p class="font-display text-xl text-ink-950">Our team profiles are coming soon.</p>
                     <p class="mt-2 text-sm text-ink-800/70">Please check back shortly.</p>
                 </div>

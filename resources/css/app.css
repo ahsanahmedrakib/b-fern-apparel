@@ -32,6 +32,7 @@
 @layer base {
     html {
         -webkit-text-size-adjust: 100%;
+        overflow-x: clip;
     }
 
     :root {
@@ -183,27 +184,51 @@
 
 /*
  * Scroll reveal. Elements are only hidden while JS is active (html.js),
- * so content stays visible if scripts fail to load.
+ * so content stays visible if scripts fail to load. The observer toggles
+ * `is-visible` both ways, so content animates in while scrolling down and
+ * animates back out when scrolling up.
  */
 .js [data-reveal] {
     opacity: 0;
-    transform: translateY(20px);
     transition:
         opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
         transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
     will-change: opacity, transform;
+}
+
+.js [data-reveal]:not(.is-visible) {
+    transform: translateY(24px);
+}
+
+.js [data-reveal='down']:not(.is-visible) {
+    transform: translateY(-24px);
+}
+
+.js [data-reveal='left']:not(.is-visible) {
+    transform: translateX(-32px);
+}
+
+.js [data-reveal='right']:not(.is-visible) {
+    transform: translateX(32px);
+}
+
+.js [data-reveal='zoom']:not(.is-visible) {
+    transform: scale(0.96);
 }
 
 .js [data-reveal].is-visible {
     opacity: 1;
-    transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
     .js [data-reveal] {
         opacity: 1;
-        transform: none;
         transition: none;
+    }
+
+    .js [data-reveal]:not(.is-visible) {
+        transform: none;
     }
 }
 

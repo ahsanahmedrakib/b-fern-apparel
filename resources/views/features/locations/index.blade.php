@@ -9,6 +9,8 @@
         'eyebrow' => 'Global Presence',
         'title' => 'Where we operate',
         'description' => 'An international network across Asia, North Africa, the Middle East, and Africa — plus a New York showroom and East Coast operations that keep merchandise moving.',
+        'image' => 'images/site/new-york-skyline.jpg',
+        'imageAlt' => 'Midtown Manhattan skyline in New York City',
     ])
 
     {{-- International offices --}}
@@ -27,7 +29,7 @@
 
             <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 @foreach (config('bfern.international_offices') as $office)
-                    <article class="card group flex items-center justify-between gap-4 hover:border-navy-600/60">
+                    <article class="card group flex items-center justify-between gap-4 hover:border-navy-600/60" data-reveal="up">
                         <div>
                             <h3 class="font-display text-2xl font-semibold text-ink-950">{{ $office['country'] }}</h3>
                             <p class="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-navy-600">{{ $office['region'] }}</p>
@@ -49,14 +51,14 @@
         <div class="pointer-events-none absolute -right-32 top-0 size-96 rounded-full bg-navy-500/10 blur-3xl" aria-hidden="true"></div>
 
         <div class="container-page relative">
-            <div class="grid gap-10 lg:grid-cols-12 lg:items-end" data-reveal>
-                <div class="lg:col-span-8">
+            <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
+                <div class="lg:col-span-8" data-reveal="left">
                     <p class="eyebrow text-navy-300">United States</p>
                     <h2 class="display mt-5 text-3xl leading-tight text-paper-50 sm:text-4xl">
                         New York showroom &amp; East Coast operations
                     </h2>
                 </div>
-                <div class="lg:col-span-4">
+                <div class="lg:col-span-4" data-reveal="right">
                     <p class="text-base leading-relaxed text-paper-300/85">
                         Our New York showroom, Brooklyn office, and Edison, New Jersey operations support our
                         day-to-day work, customer relationships, and merchandise handling.
@@ -65,8 +67,18 @@
             </div>
 
             {{-- Showroom feature --}}
-            <div class="mt-14 overflow-hidden rounded-3xl border border-paper-100/15 bg-paper-100/6">
+            <div class="mt-14 overflow-hidden rounded-3xl border border-paper-100/15 bg-paper-100/6" data-reveal>
                 <div class="grid lg:grid-cols-12">
+                    <div class="relative min-h-72 lg:col-span-5">
+                        <img
+                            src="{{ asset('images/site/showroom-interior.jpg') }}"
+                            alt="Interior of the B.Fern Apparel New York showroom"
+                            class="absolute inset-0 size-full object-cover"
+                            loading="lazy"
+                        >
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/50 to-transparent lg:bg-gradient-to-r" aria-hidden="true"></div>
+                    </div>
+
                     <div class="p-8 lg:col-span-7 lg:p-12">
                         <p class="eyebrow text-navy-300">New York Showroom</p>
                         <p class="display mt-5 text-4xl leading-tight text-paper-50 sm:text-5xl">525 Seventh Avenue</p>
@@ -74,9 +86,7 @@
                             Located in the heart of Manhattan's apparel district, our showroom is where buyers review
                             merchandise and meet with our team.
                         </p>
-                    </div>
-                    <div class="flex items-center border-t border-paper-100/15 p-8 lg:col-span-5 lg:border-l lg:border-t-0 lg:p-12">
-                        <a href="{{ route('contact.index') }}" class="btn btn-light w-full sm:w-auto">
+                        <a href="{{ route('contact.index') }}" class="btn btn-light mt-8 w-full sm:w-auto">
                             Arrange a visit
                             <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
@@ -86,15 +96,33 @@
                 </div>
             </div>
 
+            @php
+                $locationImages = [
+                    ['image' => 'images/site/showroom-interior.jpg', 'alt' => 'Bright apparel showroom interior with garment rails'],
+                    ['image' => 'images/site/new-york-skyline.jpg', 'alt' => 'New York City skyline near the B.Fern Apparel office'],
+                    ['image' => 'images/site/warehouse-aisle.jpg', 'alt' => 'Organized warehouse aisles holding apparel inventory'],
+                ];
+            @endphp
+
             <div class="mt-6 grid gap-5 lg:grid-cols-3">
-                @foreach (config('bfern.us_locations') as $location)
-                    <article class="card-dark border-paper-100/15 bg-paper-100/5">
-                        <p class="eyebrow text-navy-300">{{ $location['type'] }}</p>
-                        <h3 class="mt-3 font-display text-2xl font-semibold text-paper-50">{{ $location['city'] }}</h3>
-                        @if ($location['address'])
-                            <p class="mt-2 text-sm font-semibold text-navy-300">{{ $location['address'] }}</p>
-                        @endif
-                        <p class="mt-4 text-sm leading-relaxed text-paper-300/80">{{ $location['description'] }}</p>
+                @foreach (config('bfern.us_locations') as $index => $location)
+                    <article class="group overflow-hidden rounded-2xl border border-paper-100/15 bg-paper-100/5 transition duration-300 hover:-translate-y-1 hover:border-navy-300/40 hover:bg-paper-100/10" data-reveal="up">
+                        <div class="aspect-16/10 overflow-hidden bg-ink-900">
+                            <img
+                                src="{{ asset($locationImages[$index]['image']) }}"
+                                alt="{{ $locationImages[$index]['alt'] }}"
+                                class="size-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="p-6">
+                            <p class="eyebrow text-navy-300">{{ $location['type'] }}</p>
+                            <h3 class="mt-3 font-display text-2xl font-semibold text-paper-50">{{ $location['city'] }}</h3>
+                            @if ($location['address'])
+                                <p class="mt-2 text-sm font-semibold text-navy-300">{{ $location['address'] }}</p>
+                            @endif
+                            <p class="mt-4 text-sm leading-relaxed text-paper-300/80">{{ $location['description'] }}</p>
+                        </div>
                     </article>
                 @endforeach
             </div>

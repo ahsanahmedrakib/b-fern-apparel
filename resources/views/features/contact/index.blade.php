@@ -9,6 +9,8 @@
         'eyebrow' => 'Contact',
         'title' => 'Let\'s talk apparel',
         'description' => 'Whether you are sourcing merchandise or looking to move inventory, share a few details and our team will follow up.',
+        'image' => 'images/site/team-meeting.jpg',
+        'imageAlt' => 'B.Fern Apparel team meeting with industry partners',
     ])
 
     <section class="bg-paper-50 py-20 lg:py-28">
@@ -113,42 +115,53 @@
 
             {{-- Contact details --}}
             <aside class="lg:col-span-5" data-reveal>
-                <div class="rounded-3xl border border-paper-200 bg-paper-100/70 p-8">
-                    <h2 class="eyebrow text-navy-600">New York Showroom</h2>
-                    <p class="display mt-4 text-2xl text-ink-950">{{ config('bfern.contact.showroom_address') }}</p>
+                <div class="overflow-hidden rounded-3xl border border-paper-200 bg-paper-100/70">
+                    <figure class="aspect-16/9 overflow-hidden bg-paper-100">
+                        <img
+                            src="{{ asset('images/site/showroom-interior.jpg') }}"
+                            alt="Interior of the B.Fern Apparel New York showroom"
+                            class="size-full object-cover"
+                            loading="lazy"
+                        >
+                    </figure>
 
-                    <dl class="mt-8 space-y-5 text-sm">
-                        <div>
-                            <dt class="font-semibold text-ink-900">Email</dt>
-                            <dd class="mt-1">
-                                <a href="mailto:{{ config('bfern.contact.email') }}" class="text-navy-700 transition hover:text-navy-600">
-                                    {{ config('bfern.contact.email') }}
-                                </a>
-                            </dd>
-                        </div>
+                    <div class="p-8">
+                        <h2 class="eyebrow text-navy-600">New York Showroom</h2>
+                        <p class="display mt-4 text-2xl text-ink-950">{{ config('bfern.contact.showroom_address') }}</p>
 
-                        @if (config('bfern.contact.phone'))
+                        <dl class="mt-8 space-y-5 text-sm">
                             <div>
-                                <dt class="font-semibold text-ink-900">Phone</dt>
-                                <dd class="mt-1 text-ink-800/90">{{ config('bfern.contact.phone') }}</dd>
+                                <dt class="font-semibold text-ink-900">Email</dt>
+                                <dd class="mt-1">
+                                    <a href="mailto:{{ config('bfern.contact.email') }}" class="text-navy-700 transition hover:text-navy-600">
+                                        {{ config('bfern.contact.email') }}
+                                    </a>
+                                </dd>
                             </div>
-                        @endif
 
-                        <div>
-                            <dt class="font-semibold text-ink-900">U.S. Locations</dt>
-                            <dd class="mt-2 space-y-2 text-ink-800/90">
-                                @foreach (config('bfern.us_locations') as $location)
-                                    <p>
-                                        <span class="font-medium text-ink-900">{{ $location['city'] }}</span>
-                                        &middot; {{ $location['type'] }}
-                                        @if ($location['address'])
-                                            <span class="block text-ink-800/70">{{ $location['address'] }}</span>
-                                        @endif
-                                    </p>
-                                @endforeach
-                            </dd>
-                        </div>
-                    </dl>
+                            @if (config('bfern.contact.phone'))
+                                <div>
+                                    <dt class="font-semibold text-ink-900">Phone</dt>
+                                    <dd class="mt-1 text-ink-800/90">{{ config('bfern.contact.phone') }}</dd>
+                                </div>
+                            @endif
+
+                            <div>
+                                <dt class="font-semibold text-ink-900">U.S. Locations</dt>
+                                <dd class="mt-2 space-y-2 text-ink-800/90">
+                                    @foreach (config('bfern.us_locations') as $location)
+                                        <p>
+                                            <span class="font-medium text-ink-900">{{ $location['city'] }}</span>
+                                            &middot; {{ $location['type'] }}
+                                            @if ($location['address'])
+                                                <span class="block text-ink-800/70">{{ $location['address'] }}</span>
+                                            @endif
+                                        </p>
+                                    @endforeach
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
                 </div>
 
                 <div class="mt-6 rounded-3xl border border-paper-200 bg-white p-8">

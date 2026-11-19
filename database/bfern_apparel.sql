@@ -124,6 +124,26 @@ CREATE TABLE `contact_messages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+DROP TABLE IF EXISTS `team_members`;
+CREATE TABLE `team_members` (
+  `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `position` VARCHAR(255) NOT NULL,
+  `photo` VARCHAR(255) NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `team_members` (`name`, `position`, `photo`, `created_at`, `updated_at`) VALUES
+  ('Jeffrey Charen', 'Vice President', 'jeffrey-charen.jpg', NOW(), NOW()),
+  ('Md. Akmol Hossain Raki', 'QC Staffs', 'akmol-hossain-raki.jpeg', NOW(), NOW()),
+  ('Md. Al Shakib', 'QC Staffs', 'al-shakib.jpeg', NOW(), NOW()),
+  ('Md. Fazlul Huque (Shopon)', 'QC Staffs', 'fazlul-huque.jpeg', NOW(), NOW()),
+  ('Md. Ibrahim', 'QC Staffs', 'ibrahim.jpeg', NOW(), NOW()),
+  ('Robiul Islam Hiron', 'QC Staffs', 'robiul-islam-hiron.jpeg', NOW(), NOW()),
+  ('Md. Sobuz Mia', 'QC Staffs', 'sobuz-mia.jpeg', NOW(), NOW());
+
 DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
   `migration` VARCHAR(255) NOT NULL,
@@ -136,7 +156,8 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
   ('0001_01_01_000001_create_cache_table', 1),
   ('0001_01_01_000002_create_jobs_table', 1),
   ('2026_10_16_000001_create_contact_messages_table', 2),
-  ('2026_10_16_045629_add_read_at_to_contact_messages_table', 3);
+  ('2026_10_16_045629_add_read_at_to_contact_messages_table', 3),
+  ('2026_10_19_000001_create_team_members_table', 4);
 
 -- ---------------------------------------------------------------------------
 -- No admin row is inserted on purpose: the first user is created from the .env

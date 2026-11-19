@@ -44,6 +44,6 @@ class TeamMember extends Model
      */
     public function scopeOrdered(Builder $query): void
     {
-        $query->orderBy('id');
+        $query->orderByRaw('CASE WHEN position = ? THEN 0 ELSE 1 END', ['Vice President'])->orderBy('id');
     }
 }

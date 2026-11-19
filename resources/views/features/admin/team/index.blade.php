@@ -18,7 +18,7 @@
 
     <div class="mt-4 overflow-hidden rounded-2xl border border-paper-200 bg-paper-50">
         <div class="overflow-x-auto">
-            <table class="w-full min-w-[640px] text-left text-sm">
+            <table class="w-full min-w-160 text-left text-sm">
                 <thead class="border-b border-paper-200 bg-paper-100/60 text-xs uppercase tracking-[0.14em] text-ink-800/70">
                     <tr>
                         <th scope="col" class="px-5 py-3 font-semibold">Member</th>

@@ -11,7 +11,7 @@
 
 <footer class="bg-ink-950 text-paper-300">
     <div class="container-page grid gap-12 py-8 lg:grid-cols-12">
-        <div class="lg:col-span-5">
+        <div class="lg:col-span-5" data-reveal="up">
             <x-brand variant="light" />
             <p class="mt-6 max-w-md text-sm leading-relaxed text-paper-300/80">
                 {{ config('bfern.boilerplate') }}
@@ -30,7 +30,7 @@
             @endif
         </div>
 
-        <div class="lg:col-span-3">
+        <div class="lg:col-span-3" data-reveal="up">
             <h2 class="eyebrow text-navy-300">Explore</h2>
             <ul class="mt-5 space-y-3 text-sm">
                 @foreach ($links as $link)
@@ -43,7 +43,7 @@
             </ul>
         </div>
 
-        <div class="lg:col-span-4">
+        <div class="lg:col-span-4" data-reveal="up">
             <h2 class="eyebrow text-navy-300">U.S. Presence</h2>
             <ul class="mt-5 space-y-4 text-sm">
                 @foreach (config('bfern.us_locations') as $location)
@@ -74,9 +74,10 @@
 
     <div class="border-t border-paper-100/10">
         <div
-            class="container-page flex flex-col gap-3 py-6 text-xs text-paper-300/60 sm:flex-row sm:items-center sm:justify-between">
+            class="container-page flex flex-col gap-3 py-3 text-sm text-paper-300/60 sm:flex-row sm:items-center sm:justify-between" data-reveal>
             <p>&copy; {{ $year }} {{ config('bfern.name') }}. All rights reserved.</p>
-            <p>Apparel liquidation &middot; Authorized brand purchasing &middot; International operations</p>
+            <p>Design & Developed by <a href="http://bct.com.bd/" target="_blank">Bismillah Computer & Technology</a>
+            </p>
         </div>
     </div>
 </footer>

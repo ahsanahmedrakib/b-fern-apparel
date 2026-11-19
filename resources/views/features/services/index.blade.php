@@ -9,19 +9,21 @@
         'eyebrow' => 'What We Do',
         'title' => 'Apparel liquidation, done responsibly',
         'description' => 'For more than 20 years we have connected leading brands with buyers — purchasing merchandise overseas under authorization, and coordinating its movement across international markets.',
+        'image' => 'images/site/textile-factory.jpg',
+        'imageAlt' => 'Garment workers at sewing machines in an apparel production facility',
     ])
 
     {{-- Core services --}}
     <section class="bg-paper-50 py-20 lg:py-28">
-        <div class="container-page space-y-16 lg:space-y-24" data-reveal>
+        <div class="container-page space-y-16 lg:space-y-24">
             <article class="grid gap-10 lg:grid-cols-12 lg:gap-16">
-                <div class="lg:col-span-5">
+                <div class="lg:col-span-5" data-reveal="left">
                     <span class="eyebrow text-navy-600">01 &middot; Liquidation</span>
                     <h2 class="display mt-5 text-3xl leading-tight text-ink-950 sm:text-4xl">
                         Connecting leading brands with buyers
                     </h2>
                 </div>
-                <div class="lg:col-span-7">
+                <div class="lg:col-span-7" data-reveal="right">
                     <p class="text-lg leading-relaxed text-ink-800/90">
                         As one of the largest apparel liquidators in the United States, we help brands move closeouts,
                         excess inventory, and overstock to the right buyers — quickly, quietly, and with the
@@ -39,17 +41,26 @@
                             </li>
                         @endforeach
                     </ul>
+
+                    <figure class="mt-8 overflow-hidden rounded-3xl">
+                        <img
+                            src="{{ asset('images/site/boutique-racks.jpg') }}"
+                            alt="Closeout and excess apparel displayed for buyers"
+                            class="aspect-16/9 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </figure>
                 </div>
             </article>
 
             <article class="grid gap-10 lg:grid-cols-12 lg:gap-16">
-                <div class="lg:col-span-5">
+                <div class="lg:col-span-5" data-reveal="left">
                     <span class="eyebrow text-navy-600">02 &middot; Authorized Purchasing</span>
                     <h2 class="display mt-5 text-3xl leading-tight text-ink-950 sm:text-4xl">
                         Purchasing overseas for {{ config('bfern.brands_count') }} brands
                     </h2>
                 </div>
-                <div class="lg:col-span-7">
+                <div class="lg:col-span-7" data-reveal="right">
                     <p class="text-lg leading-relaxed text-ink-800/90">
                         We purchase merchandise overseas for 50 brands under formal agreements. Brand release letters
                         accompany these transactions, providing the necessary authorization for the goods we handle and
@@ -62,6 +73,15 @@
                             buyers and partners always know the goods they receive are properly authorized.
                         </p>
                     </div>
+
+                    <figure class="mt-8 overflow-hidden rounded-3xl">
+                        <img
+                            src="{{ asset('images/site/warehouse-team.jpg') }}"
+                            alt="Team preparing authorized apparel merchandise for shipment"
+                            class="aspect-16/9 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </figure>
                 </div>
             </article>
         </div>
@@ -71,8 +91,8 @@
     <section class="relative overflow-hidden bg-ink-950 py-20 text-paper-100 weave-pattern lg:py-28">
         <div class="pointer-events-none absolute -left-24 top-10 size-96 rounded-full bg-navy-600/20 blur-3xl" aria-hidden="true"></div>
 
-        <div class="container-page relative" data-reveal>
-            <div class="max-w-2xl">
+        <div class="container-page relative">
+            <div class="max-w-2xl" data-reveal>
                 <p class="eyebrow text-navy-300">Product Coverage</p>
                 <h2 class="display mt-5 text-3xl leading-tight text-paper-50 sm:text-4xl">
                     Men's, women's, and children's — knit and woven
@@ -86,18 +106,28 @@
             <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 @php
                     $groups = [
-                        ['title' => 'Men\'s Apparel', 'body' => 'Knit and woven programs across tops, bottoms, and outerwear.'],
-                        ['title' => 'Women\'s Apparel', 'body' => 'Broad assortments spanning knit and woven categories.'],
-                        ['title' => 'Children\'s Apparel', 'body' => 'Kidswear programs covering everyday and seasonal goods.'],
-                        ['title' => 'Knit Garments', 'body' => 'Jersey, fleece, and knit constructions across categories.'],
-                        ['title' => 'Woven Garments', 'body' => 'Wovens including bottoms, shirting, and structured pieces.'],
+                        ['title' => 'Men\'s Apparel', 'body' => 'Knit and woven programs across tops, bottoms, and outerwear.', 'image' => 'images/site/coat-rack.jpg', 'alt' => 'Men\'s coats and jackets on a garment rail'],
+                        ['title' => 'Women\'s Apparel', 'body' => 'Broad assortments spanning knit and woven categories.', 'image' => 'images/site/clothing-racks.jpg', 'alt' => 'Women\'s apparel assorted on store racks'],
+                        ['title' => 'Children\'s Apparel', 'body' => 'Kidswear programs covering everyday and seasonal goods.', 'image' => 'images/site/boutique-racks.jpg', 'alt' => 'Colorful children\'s and everyday apparel on display'],
+                        ['title' => 'Knit Garments', 'body' => 'Jersey, fleece, and knit constructions across categories.', 'image' => 'images/site/textile-factory.jpg', 'alt' => 'Knit garments in production at a textile facility'],
+                        ['title' => 'Woven Garments', 'body' => 'Wovens including bottoms, shirting, and structured pieces.', 'image' => 'images/site/warehouse-aisle.jpg', 'alt' => 'Woven garments stored in an organized warehouse'],
                     ];
                 @endphp
 
                 @foreach ($groups as $group)
-                    <article class="card-dark border-paper-100/15 bg-paper-100/5 hover:border-navy-300/40">
-                        <h3 class="font-display text-xl font-semibold text-paper-50">{{ $group['title'] }}</h3>
-                        <p class="mt-3 text-sm leading-relaxed text-paper-300/80">{{ $group['body'] }}</p>
+                    <article class="group overflow-hidden rounded-2xl border border-paper-100/15 bg-paper-100/5 transition duration-300 hover:-translate-y-1 hover:border-navy-300/40 hover:bg-paper-100/10" data-reveal="up">
+                        <div class="aspect-16/9 overflow-hidden bg-ink-900">
+                            <img
+                                src="{{ asset($group['image']) }}"
+                                alt="{{ $group['alt'] }}"
+                                class="size-full object-cover opacity-85 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-display text-xl font-semibold text-paper-50">{{ $group['title'] }}</h3>
+                            <p class="mt-3 text-sm leading-relaxed text-paper-300/80">{{ $group['body'] }}</p>
+                        </div>
                     </article>
                 @endforeach
             </div>
@@ -125,7 +155,7 @@
                 @endphp
 
                 @foreach ($steps as $index => $step)
-                    <li class="border-t-2 border-paper-300 pt-6">
+                    <li class="border-t-2 border-paper-300 pt-6" data-reveal="up">
                         <span class="font-display text-sm font-semibold text-navy-600">Step {{ $index + 1 }}</span>
                         <h3 class="mt-3 font-display text-xl font-semibold text-ink-950">{{ $step['title'] }}</h3>
                         <p class="mt-3 text-sm leading-relaxed text-ink-800/85">{{ $step['body'] }}</p>

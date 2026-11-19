@@ -17,7 +17,7 @@
                 </a>
             </div>
 
-            <div class="mt-12" data-team-swiper>
+            <div class="mt-12" data-team-swiper data-reveal>
                 <div class="swiper">
                     <div class="swiper-wrapper items-stretch">
                         @foreach ($teamMembers as $member)

@@ -14,18 +14,19 @@ class TeamMemberSeeder extends Seeder
     public function run(): void
     {
         $members = [
-            ['name' => 'Akmol Hossain Raki', 'photo' => 'akmol-hossain-raki.jpeg'],
-            ['name' => 'Al Shakib', 'photo' => 'al-shakib.jpeg'],
-            ['name' => 'Fazlul Huque', 'photo' => 'fazlul-huque.jpeg'],
-            ['name' => 'Ibrahim', 'photo' => 'ibrahim.jpeg'],
-            ['name' => 'Robiul Islam Hiron', 'photo' => 'robiul-islam-hiron.jpeg'],
-            ['name' => 'Sobuz Mia', 'photo' => 'sobuz-mia.jpeg'],
+            ['name' => 'Jeffrey Charen', 'position' => 'Vice President', 'photo' => 'jeffrey-charen.jpg'],
+            ['name' => 'Md. Akmol Hossain Raki', 'position' => 'QC Staffs', 'photo' => 'akmol-hossain-raki.jpeg'],
+            ['name' => 'Md. Al Shakib', 'position' => 'QC Staffs', 'photo' => 'al-shakib.jpeg'],
+            ['name' => 'Md. Fazlul Huque (Shopon)', 'position' => 'QC Staffs', 'photo' => 'fazlul-huque.jpeg'],
+            ['name' => 'Md. Ibrahim', 'position' => 'QC Staffs', 'photo' => 'ibrahim.jpeg'],
+            ['name' => 'Robiul Islam Hiron', 'position' => 'QC Staffs', 'photo' => 'robiul-islam-hiron.jpeg'],
+            ['name' => 'Md. Sobuz Mia', 'position' => 'QC Staffs', 'photo' => 'sobuz-mia.jpeg'],
         ];
 
         foreach ($members as $member) {
             TeamMember::query()->updateOrCreate(
                 ['photo' => $member['photo']],
-                ['name' => $member['name'], 'position' => 'QC Staffs'],
+                ['name' => $member['name'], 'position' => $member['position']],
             );
         }
     }
