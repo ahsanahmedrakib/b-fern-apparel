@@ -75,7 +75,11 @@
                     </div>
 
                     <p class="mt-1 truncate text-sm text-ink-800/80">
-                        {{ $message->email }}
+                        @if ($message->email)
+                            {{ $message->email }}
+                        @elseif ($message->phone)
+                            {{ $message->phone }}
+                        @endif
                         @if ($message->company)
                             &middot; {{ $message->company }}
                         @endif

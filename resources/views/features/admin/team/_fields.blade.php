@@ -63,3 +63,22 @@
         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
     @enderror
 </div>
+
+<div>
+    <input type="hidden" name="is_active" value="0">
+    <label for="{{ $preview ? 'edit-is-active' : 'create-is-active' }}" class="flex items-center gap-2 text-sm font-semibold text-ink-900">
+        <input
+            type="checkbox"
+            name="is_active"
+            id="{{ $preview ? 'edit-is-active' : 'create-is-active' }}"
+            value="1"
+            class="size-4 rounded border-paper-300 text-navy-700 focus:ring-navy-600"
+            @checked((bool) old('is_active', $member?->is_active ?? true))
+        >
+        Active on website
+    </label>
+    <p class="mt-2 text-xs text-ink-800/70">Inactive members stay in the admin but are hidden from the public site.</p>
+    @error('is_active')
+        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+    @enderror
+</div>

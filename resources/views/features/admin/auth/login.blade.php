@@ -29,14 +29,31 @@
 
             <div>
                 <label for="password" class="block text-sm font-semibold text-ink-900">Password</label>
-                <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    required
-                    autocomplete="current-password"
-                    @class(['field mt-2', 'field-error' => $errors->has('password')])
-                >
+                <div class="relative mt-2">
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        required
+                        autocomplete="current-password"
+                        @class(['field pr-12', 'field-error' => $errors->has('password')])
+                    >
+                    <button
+                        type="button"
+                        data-password-toggle="password"
+                        class="absolute inset-y-0 right-0 grid w-11 place-items-center rounded-r-xl text-ink-800/60 transition hover:text-ink-900"
+                        aria-label="Show password"
+                        aria-pressed="false"
+                    >
+                        <svg data-password-icon="show" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12S5.5 5.25 12 5.25 21.75 12 21.75 12 18.5 18.75 12 18.75 2.25 12 2.25 12Z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                        <svg data-password-icon="hide" class="hidden size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m3 3 18 18M10.5 6.1A9.8 9.8 0 0 1 12 6c6.5 0 9.75 6 9.75 6a17.7 17.7 0 0 1-3.1 3.9M6.4 6.4C3.5 8.3 2.25 12 2.25 12S5.5 18 12 18a9.7 9.7 0 0 0 4.1-.9M9.9 9.9a3 3 0 0 0 4.2 4.2" />
+                        </svg>
+                    </button>
+                </div>
                 @error('password')
                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                 @enderror

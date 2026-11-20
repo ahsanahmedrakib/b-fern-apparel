@@ -10,7 +10,7 @@
 @section('content')
     <div class="flex flex-wrap items-center justify-between gap-4">
         <p class="text-sm text-ink-800/70">
-            {{ $teamMembers->total() }} {{ Str::plural('member', $teamMembers->total()) }} shown on the website.
+            {{ $teamMembers->total() }} {{ Str::plural('member', $teamMembers->total()) }} total. Only active members appear on the website.
         </p>
 
         <button type="button" data-team-create class="btn btn-primary px-5 py-2.5 text-sm">Add team member</button>
@@ -23,6 +23,7 @@
                     <tr>
                         <th scope="col" class="px-5 py-3 font-semibold">Member</th>
                         <th scope="col" class="px-5 py-3 font-semibold">Position</th>
+                        <th scope="col" class="px-5 py-3 font-semibold">Status</th>
                         <th scope="col" class="px-5 py-3 font-semibold">Added</th>
                         <th scope="col" class="px-5 py-3 text-right font-semibold">Actions</th>
                     </tr>
@@ -39,6 +40,22 @@
                             <td class="px-5 py-4">
                                 <span class="rounded-full bg-paper-200 px-2.5 py-0.5 text-xs font-medium text-ink-800">{{ $member->position }}</span>
                             </td>
+                            <td class="px-5 py-4">
+                                <form method="POST" action="{{ route('admin.team.toggle-active', $member) }}">
+                                    @csrf
+                                    <button
+                                        type="submit"
+                                        @class([
+                                            'rounded-full px-2.5 py-0.5 text-xs font-semibold transition',
+                                            'bg-navy-600/15 text-navy-700 hover:bg-navy-600/25' => $member->is_active,
+                                            'bg-paper-200 text-ink-800/70 hover:bg-paper-300' => ! $member->is_active,
+                                        ])
+                                        title="{{ $member->is_active ? 'Click to hide from the website' : 'Click to show on the website' }}"
+                                    >
+                                        {{ $member->is_active ? 'Active' : 'Inactive' }}
+                                    </button>
+                                </form>
+                            </td>
                             <td class="px-5 py-4 text-ink-800/70">{{ $member->created_at->format('M j, Y') }}</td>
                             <td class="px-5 py-4">
                                 <div class="flex items-center justify-end gap-2">
@@ -49,6 +66,7 @@
                                         data-name="{{ $member->name }}"
                                         data-position="{{ $member->position }}"
                                         data-photo="{{ $member->photoUrl() }}"
+                                        data-active="{{ $member->is_active ? '1' : '0' }}"
                                         data-update-url="{{ route('admin.team.update', $member) }}"
                                         class="rounded-lg border border-paper-300 px-3 py-1.5 text-xs font-medium text-ink-800 transition hover:border-ink-950/40"
                                     >
@@ -67,7 +85,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="p-10 text-center">
+                            <td colspan="5" class="p-10 text-center">
                                 <p class="font-display text-lg text-ink-950">No team members yet</p>
                                 <p class="mt-2 text-sm text-ink-800/70">Add your first team member to feature them on the site.</p>
                             </td>

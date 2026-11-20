@@ -22,7 +22,7 @@ class InquiryReceived extends Mailable
     {
         return new Envelope(
             subject: 'New website inquiry from '.$this->contactMessage->name,
-            replyTo: [$this->contactMessage->email],
+            replyTo: $this->contactMessage->email ? [$this->contactMessage->email] : [],
         );
     }
 

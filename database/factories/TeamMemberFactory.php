@@ -21,6 +21,7 @@ class TeamMemberFactory extends Factory
             'name' => fake()->name(),
             'position' => 'QC Staffs',
             'photo' => fake()->uuid().'.jpg',
+            'is_active' => true,
         ];
     }
 }

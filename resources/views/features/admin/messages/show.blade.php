@@ -45,12 +45,14 @@
                         <dt class="font-semibold text-ink-900">Name</dt>
                         <dd class="mt-0.5 text-ink-800">{{ $message->name }}</dd>
                     </div>
-                    <div>
-                        <dt class="font-semibold text-ink-900">Email</dt>
-                        <dd class="mt-0.5">
-                            <a href="mailto:{{ $message->email }}" class="text-navy-700 hover:text-navy-600">{{ $message->email }}</a>
-                        </dd>
-                    </div>
+                    @if ($message->email)
+                        <div>
+                            <dt class="font-semibold text-ink-900">Email</dt>
+                            <dd class="mt-0.5">
+                                <a href="mailto:{{ $message->email }}" class="text-navy-700 hover:text-navy-600">{{ $message->email }}</a>
+                            </dd>
+                        </div>
+                    @endif
                     @if ($message->company)
                         <div>
                             <dt class="font-semibold text-ink-900">Company</dt>
@@ -65,9 +67,11 @@
                     @endif
                 </dl>
 
-                <a href="mailto:{{ $message->email }}?subject={{ rawurlencode('Re: '.$message->subjectLabel()) }}" class="btn btn-primary mt-6 w-full">
-                    Reply by email
-                </a>
+                @if ($message->email)
+                    <a href="mailto:{{ $message->email }}?subject={{ rawurlencode('Re: '.$message->subjectLabel()) }}" class="btn btn-primary mt-6 w-full">
+                        Reply by email
+                    </a>
+                @endif
             </div>
 
             <div class="rounded-2xl border border-paper-200 bg-paper-50 p-6">

@@ -19,9 +19,9 @@ class StoreContactRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
+            'email' => ['nullable', 'string', 'email', 'max:255'],
             'company' => ['nullable', 'string', 'max:255'],
-            'phone' => ['nullable', 'string', 'max:50'],
+            'phone' => ['required', 'string', 'max:50'],
             'subject' => ['required', 'string', Rule::in(array_keys(config('bfern.contact.subjects')))],
             'message' => ['required', 'string', 'min:20', 'max:5000'],
         ];

@@ -33,6 +33,7 @@ class TeamMemberController extends Controller
             'name' => $request->validated('name'),
             'position' => $request->validated('position'),
             'photo' => $request->file('photo')->store('', 'teams'),
+            'is_active' => $request->boolean('is_active', true),
         ]);
 
         return redirect()
@@ -44,6 +45,7 @@ class TeamMemberController extends Controller
     {
         $teamMember->name = $request->validated('name');
         $teamMember->position = $request->validated('position');
+        $teamMember->is_active = $request->boolean('is_active', $teamMember->is_active);
 
         if ($request->hasFile('photo')) {
             Storage::disk('teams')->delete($teamMember->photo);
@@ -55,6 +57,17 @@ class TeamMemberController extends Controller
         return redirect()
             ->route('admin.team.index')
             ->with('status', 'Team member updated.');
+    }
+
+    public function toggleActive(TeamMember $teamMember): RedirectResponse
+    {
+        $teamMember->update(['is_active' => ! $teamMember->is_active]);
+
+        return redirect()
+            ->route('admin.team.index')
+            ->with('status', $teamMember->is_active
+                ? 'Team member is now active and visible on the website.'
+                : 'Team member is now inactive and hidden from the website.');
     }
 
     public function destroy(TeamMember $teamMember): RedirectResponse

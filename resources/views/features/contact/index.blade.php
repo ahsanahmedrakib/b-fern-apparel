@@ -59,10 +59,9 @@
 
                         <x-field
                             name="email"
-                            label="Email"
+                            label="Email (optional)"
                             type="email"
-                            rules="required|email"
-                            required
+                            rules="email"
                             autocomplete="email"
                         />
 
@@ -77,7 +76,8 @@
                             name="phone"
                             label="Phone"
                             type="tel"
-                            rules="max:50"
+                            rules="required|max:50"
+                            required
                             autocomplete="tel"
                         />
                     </div>

@@ -20,7 +20,18 @@ class TeamMember extends Model
         'name',
         'position',
         'photo',
+        'is_active',
     ];
+
+    /**
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'is_active' => 'boolean',
+        ];
+    }
 
     public function photoUrl(): string
     {
@@ -37,6 +48,14 @@ class TeamMember extends Model
         );
 
         return implode('', $initials);
+    }
+
+    /**
+     * @param  Builder<TeamMember>  $query
+     */
+    public function scopeActive(Builder $query): void
+    {
+        $query->where('is_active', true);
     }
 
     /**

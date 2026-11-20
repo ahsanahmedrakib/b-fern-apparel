@@ -113,7 +113,7 @@ DROP TABLE IF EXISTS `contact_messages`;
 CREATE TABLE `contact_messages` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
-  `email` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NULL DEFAULT NULL,
   `company` VARCHAR(255) NULL DEFAULT NULL,
   `phone` VARCHAR(255) NULL DEFAULT NULL,
   `subject` VARCHAR(255) NOT NULL,
@@ -130,6 +130,7 @@ CREATE TABLE `team_members` (
   `name` VARCHAR(255) NOT NULL,
   `position` VARCHAR(255) NOT NULL,
   `photo` VARCHAR(255) NOT NULL,
+  `is_active` TINYINT(1) NOT NULL DEFAULT 1,
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -157,7 +158,9 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
   ('0001_01_01_000002_create_jobs_table', 1),
   ('2026_10_16_000001_create_contact_messages_table', 2),
   ('2026_10_16_045629_add_read_at_to_contact_messages_table', 3),
-  ('2026_10_19_000001_create_team_members_table', 4);
+  ('2026_10_19_000001_create_team_members_table', 4),
+  ('2026_11_20_170206_make_email_nullable_on_contact_messages_table', 5),
+  ('2026_11_20_170208_add_is_active_to_team_members_table', 5);
 
 -- ---------------------------------------------------------------------------
 -- No admin row is inserted on purpose: the first user is created from the .env

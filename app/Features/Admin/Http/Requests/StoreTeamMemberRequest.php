@@ -20,6 +20,7 @@ class StoreTeamMemberRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'position' => ['required', 'string', 'max:255'],
             'photo' => ['required', 'image', 'mimes:jpeg,jpg,png,webp', 'max:4096'],
+            'is_active' => ['sometimes', 'boolean'],
         ];
     }
 

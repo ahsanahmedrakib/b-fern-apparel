@@ -26,6 +26,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::get('team', [TeamMemberController::class, 'index'])->name('team.index');
         Route::post('team', [TeamMemberController::class, 'store'])->name('team.store');
+        Route::post('team/{teamMember}/toggle-active', [TeamMemberController::class, 'toggleActive'])->name('team.toggle-active');
         Route::put('team/{teamMember}', [TeamMemberController::class, 'update'])->name('team.update');
         Route::delete('team/{teamMember}', [TeamMemberController::class, 'destroy'])->name('team.destroy');
     });

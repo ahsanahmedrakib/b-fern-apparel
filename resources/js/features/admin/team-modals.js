@@ -48,6 +48,7 @@ export function initTeamModals() {
             const idField = modal.querySelector('[name="team_member_id"]');
             const nameField = modal.querySelector('[name="name"]');
             const positionField = modal.querySelector('[name="position"]');
+            const activeField = modal.querySelector('input[type="checkbox"][name="is_active"]');
             const preview = modal.querySelector('[data-photo-preview]');
             const previewWrap = modal.querySelector('[data-photo-preview-wrap]');
 
@@ -65,6 +66,10 @@ export function initTeamModals() {
 
             if (positionField) {
                 positionField.value = button.dataset.position ?? '';
+            }
+
+            if (activeField) {
+                activeField.checked = button.dataset.active === '1';
             }
 
             if (preview && button.dataset.photo) {

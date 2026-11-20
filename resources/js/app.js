@@ -1,5 +1,6 @@
 import { initContactValidation } from './features/contact/validation';
 import { initTeamSwipers } from './features/teams/swiper';
+import { initPasswordToggles } from './features/admin/password-toggle';
 import { initTeamModals } from './features/admin/team-modals';
 
 function initMobileNav() {
@@ -104,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeaderShadow();
     initReveal();
     initTeamSwipers();
+    initPasswordToggles();
     initTeamModals();
     initContactValidation();
 });

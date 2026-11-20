@@ -11,7 +11,7 @@ class TeamsController extends Controller
     public function index(): View
     {
         return view('features.teams.index', [
-            'teamMembers' => TeamMember::query()->ordered()->get(),
+            'teamMembers' => TeamMember::query()->active()->ordered()->get(),
         ]);
     }
 }
