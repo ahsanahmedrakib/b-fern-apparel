@@ -74,9 +74,12 @@
 
     <div class="border-t border-paper-100/10">
         <div
-            class="container-page flex flex-col gap-3 py-3 text-sm text-paper-300/60 sm:flex-row sm:items-center sm:justify-between" data-reveal>
+            class="container-page flex flex-col gap-2 py-4 text-sm text-paper-300/80 sm:flex-row sm:items-center sm:justify-between">
             <p>&copy; {{ $year }} {{ config('bfern.name') }}. All rights reserved.</p>
-            <p>Design & Developed by <a href="http://bct.com.bd/" target="_blank">Bismillah Computer & Technology</a>
+            <p>
+                Design &amp; Developed by
+                <a href="http://bct.com.bd/" class="transition hover:text-paper-50" rel="noopener noreferrer"
+                    target="_blank">Bismillah Computer &amp; Technology</a>
             </p>
         </div>
     </div>
