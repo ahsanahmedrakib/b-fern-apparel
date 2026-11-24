@@ -69,6 +69,42 @@
         </div>
     </section>
 
+    {{-- Vice President's message --}}
+    <section class="border-y border-paper-200 bg-white py-20 lg:py-28">
+        <div class="container-page grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+            <div class="lg:col-span-5" data-reveal="left">
+                <figure class="overflow-hidden rounded-3xl">
+                    <img
+                        src="{{ asset(config('bfern.vice_president_message.photo')) }}"
+                        alt="{{ config('bfern.vice_president_message.name') }}, {{ config('bfern.vice_president_message.title') }} of {{ config('bfern.name') }}"
+                        class="aspect-4/5 w-full object-cover object-top"
+                        loading="lazy"
+                    >
+                </figure>
+            </div>
+
+            <div class="lg:col-span-7" data-reveal="right">
+                <p class="eyebrow text-navy-600">Message from our Vice President</p>
+                <h2 class="display mt-5 text-3xl leading-tight text-ink-950 sm:text-4xl">
+                    {{ config('bfern.vice_president_message.heading') }}
+                </h2>
+
+                <blockquote class="mt-6 border-l-4 border-navy-500 pl-6">
+                    <div class="space-y-5 text-base leading-relaxed text-ink-800/90">
+                        @foreach (config('bfern.vice_president_message.body') as $paragraph)
+                            <p>{{ $paragraph }}</p>
+                        @endforeach
+                    </div>
+
+                    <footer class="mt-7">
+                        <p class="font-display text-lg font-semibold text-ink-950">{{ config('bfern.vice_president_message.name') }}</p>
+                        <p class="mt-1 text-sm font-semibold uppercase tracking-[0.16em] text-navy-600">{{ config('bfern.vice_president_message.title') }}</p>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
     {{-- Authorized relationships highlight --}}
     <section class="relative overflow-hidden bg-ink-950 py-20 text-paper-100 weave-pattern lg:py-24">
         <img

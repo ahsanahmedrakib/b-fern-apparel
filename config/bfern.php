@@ -20,6 +20,18 @@ return [
 
     'boilerplate' => 'B.Fern Apparel is a leading U.S. apparel liquidator with 20+ years of experience, authorized relationships with 50 brands, and an international network across Asia, North Africa, and the Middle East, with a showroom at 525 Seventh Avenue, New York.',
 
+    'vice_president_message' => [
+        'name' => 'Jeffrey Charen',
+        'title' => 'Vice President',
+        'photo' => 'images/teams/jeffrey-charen.jpg',
+        'heading' => 'Trust, built one shipment at a time',
+        'body' => [
+            'For more than two decades, our promise has stayed the same: treat every brand, every buyer, and every shipment with the care we would expect for our own business. That commitment is what turns a single transaction into a relationship that lasts for years.',
+            'We are proud of the trust our brand partners place in us and of the buyers who rely on our team for quality, consistency, and integrity. As we continue to grow across markets, we remain focused on the details that matter — authorized sourcing, dependable communication, and merchandise that meets expectations.',
+            'Thank you for being part of the B.Fern Apparel story. We look forward to what we will build together next.',
+        ],
+    ],
+
     'years_of_experience' => '20+',
 
     'brands_count' => '50',
