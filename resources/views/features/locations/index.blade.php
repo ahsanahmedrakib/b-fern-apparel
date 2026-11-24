@@ -9,8 +9,8 @@
         'eyebrow' => 'Global Presence',
         'title' => 'Where we operate',
         'description' => 'An international network across Asia, North Africa, the Middle East, and Africa — plus a New York showroom and East Coast operations that keep merchandise moving.',
-        'image' => 'images/site/new-york-skyline.jpg',
-        'imageAlt' => 'Midtown Manhattan skyline in New York City',
+        'image' => 'images/wearhouse/wh-1.jpeg',
+        'imageAlt' => 'Exterior of the B.Fern Apparel warehouse facility with loading docks',
     ])
 
     {{-- International offices --}}
@@ -71,8 +71,8 @@
                 <div class="grid lg:grid-cols-12">
                     <div class="relative min-h-72 lg:col-span-5">
                         <img
-                            src="{{ asset('images/site/showroom-interior.jpg') }}"
-                            alt="Interior of the B.Fern Apparel New York showroom"
+                            src="{{ asset('images/wearhouse/wh-1.jpeg') }}"
+                            alt="Exterior of the B.Fern Apparel warehouse and operations facility"
                             class="absolute inset-0 size-full object-cover"
                             loading="lazy"
                         >
@@ -98,9 +98,9 @@
 
             @php
                 $locationImages = [
-                    ['image' => 'images/site/showroom-interior.jpg', 'alt' => 'Bright apparel showroom interior with garment rails'],
-                    ['image' => 'images/site/new-york-skyline.jpg', 'alt' => 'New York City skyline near the B.Fern Apparel office'],
-                    ['image' => 'images/site/warehouse-aisle.jpg', 'alt' => 'Organized warehouse aisles holding apparel inventory'],
+                    ['image' => 'images/wearhouse/wh-1.jpeg', 'alt' => 'Exterior of the B.Fern Apparel facility with loading docks'],
+                    ['image' => 'images/wearhouse/wh-3.jpeg', 'alt' => 'Trailers lined up at the B.Fern Apparel loading docks'],
+                    ['image' => 'images/wearhouse/wh-2.jpeg', 'alt' => 'Organized warehouse docks holding apparel inventory'],
                 ];
             @endphp
 

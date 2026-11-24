@@ -106,7 +106,8 @@ return [
             'buying' => 'Buying merchandise',
             'liquidation' => 'Liquidation & closeouts',
             'brand' => 'Brand partnership',
-            'other' => 'General inquiry',
+            'general' => 'General inquiry',
+            'other' => 'Other',
         ],
     ],
 

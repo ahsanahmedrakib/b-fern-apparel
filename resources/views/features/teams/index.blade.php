@@ -9,8 +9,8 @@
         'eyebrow' => 'Our People',
         'title' => 'Meet the team',
         'description' => 'Behind every shipment is a team that knows the apparel market — coordinating sourcing, quality control, and logistics across our international network.',
-        'image' => 'images/site/team-meeting.jpg',
-        'imageAlt' => 'B.Fern Apparel team collaborating in a modern office',
+        'image' => 'images/wearhouse/wh-4.jpeg',
+        'imageAlt' => 'B.Fern Apparel warehouse team standing among stocked pallet racks',
     ])
 
     <section class="bg-paper-50 py-20 lg:py-28">

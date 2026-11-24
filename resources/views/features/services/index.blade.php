@@ -9,8 +9,8 @@
         'eyebrow' => 'What We Do',
         'title' => 'Apparel liquidation, done responsibly',
         'description' => 'For more than 20 years we have connected leading brands with buyers — purchasing merchandise overseas under authorization, and coordinating its movement across international markets.',
-        'image' => 'images/site/textile-factory.jpg',
-        'imageAlt' => 'Garment workers at sewing machines in an apparel production facility',
+        'image' => 'images/wearhouse/wh-2.jpeg',
+        'imageAlt' => 'Shipping containers and trucks lined up at the warehouse loading docks',
     ])
 
     {{-- Core services --}}
@@ -44,8 +44,8 @@
 
                     <figure class="mt-8 overflow-hidden rounded-3xl">
                         <img
-                            src="{{ asset('images/site/boutique-racks.jpg') }}"
-                            alt="Closeout and excess apparel displayed for buyers"
+                            src="{{ asset('images/wearhouse/wh-6.jpeg') }}"
+                            alt="Closeout and excess apparel inventory stored in the warehouse"
                             class="aspect-16/9 w-full object-cover"
                             loading="lazy"
                         >
@@ -76,8 +76,8 @@
 
                     <figure class="mt-8 overflow-hidden rounded-3xl">
                         <img
-                            src="{{ asset('images/site/warehouse-team.jpg') }}"
-                            alt="Team preparing authorized apparel merchandise for shipment"
+                            src="{{ asset('images/wearhouse/wh-5.jpeg') }}"
+                            alt="Team preparing authorized apparel merchandise for shipment at the dock"
                             class="aspect-16/9 w-full object-cover"
                             loading="lazy"
                         >
@@ -106,11 +106,11 @@
             <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 @php
                     $groups = [
-                        ['title' => 'Men\'s Apparel', 'body' => 'Knit and woven programs across tops, bottoms, and outerwear.', 'image' => 'images/site/coat-rack.jpg', 'alt' => 'Men\'s coats and jackets on a garment rail'],
-                        ['title' => 'Women\'s Apparel', 'body' => 'Broad assortments spanning knit and woven categories.', 'image' => 'images/site/clothing-racks.jpg', 'alt' => 'Women\'s apparel assorted on store racks'],
-                        ['title' => 'Children\'s Apparel', 'body' => 'Kidswear programs covering everyday and seasonal goods.', 'image' => 'images/site/boutique-racks.jpg', 'alt' => 'Colorful children\'s and everyday apparel on display'],
-                        ['title' => 'Knit Garments', 'body' => 'Jersey, fleece, and knit constructions across categories.', 'image' => 'images/site/textile-factory.jpg', 'alt' => 'Knit garments in production at a textile facility'],
-                        ['title' => 'Woven Garments', 'body' => 'Wovens including bottoms, shirting, and structured pieces.', 'image' => 'images/site/warehouse-aisle.jpg', 'alt' => 'Woven garments stored in an organized warehouse'],
+                        ['title' => 'Men\'s Apparel', 'body' => 'Knit and woven programs across tops, bottoms, and outerwear.', 'image' => 'images/wearhouse/wh-6.jpeg', 'alt' => 'Men\'s apparel inventory stored in the warehouse'],
+                        ['title' => 'Women\'s Apparel', 'body' => 'Broad assortments spanning knit and woven categories.', 'image' => 'images/wearhouse/wh-2.jpeg', 'alt' => 'Women\'s apparel inventory moving through the loading docks'],
+                        ['title' => 'Children\'s Apparel', 'body' => 'Kidswear programs covering everyday and seasonal goods.', 'image' => 'images/wearhouse/wh-6.jpeg', 'alt' => 'Children\'s and everyday apparel stored on warehouse racks'],
+                        ['title' => 'Knit Garments', 'body' => 'Jersey, fleece, and knit constructions across categories.', 'image' => 'images/wearhouse/wh-5.jpeg', 'alt' => 'Knit garments being handled at the warehouse shipping dock'],
+                        ['title' => 'Woven Garments', 'body' => 'Wovens including bottoms, shirting, and structured pieces.', 'image' => 'images/wearhouse/wh-6.jpeg', 'alt' => 'Woven garments stored in an organized warehouse'],
                     ];
                 @endphp
 

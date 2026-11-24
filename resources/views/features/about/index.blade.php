@@ -9,8 +9,8 @@
         'eyebrow' => 'Our Story',
         'title' => 'Built on trusted partnerships',
         'description' => 'For more than 20 years, B.Fern Apparel has connected leading brands with buyers in the apparel market — a reputation earned through experience, authorized relationships, and an international operating network.',
-        'image' => 'images/site/business-meeting.jpg',
-        'imageAlt' => 'B.Fern Apparel team meeting with partners in a modern office',
+        'image' => 'images/wearhouse/wh-1.jpeg',
+        'imageAlt' => 'Exterior of the B.Fern Apparel warehouse facility with loading docks',
     ])
 
     {{-- Story --}}
@@ -48,8 +48,8 @@
             <div class="lg:col-span-5" data-reveal="right">
                 <figure class="overflow-hidden rounded-3xl">
                     <img
-                        src="{{ asset('images/site/team-meeting.jpg') }}"
-                        alt="B.Fern Apparel team collaborating around a table"
+                        src="{{ asset('images/wearhouse/wh-4.jpeg') }}"
+                        alt="B.Fern Apparel warehouse team standing among stocked pallet racks"
                         class="aspect-4/5 w-full object-cover"
                         loading="lazy"
                     >
@@ -108,7 +108,7 @@
     {{-- Authorized relationships highlight --}}
     <section class="relative overflow-hidden bg-ink-950 py-20 text-paper-100 weave-pattern lg:py-24">
         <img
-            src="{{ asset('images/site/textile-factory.jpg') }}"
+            src="{{ asset('images/wearhouse/wh-6.jpeg') }}"
             alt=""
             class="pointer-events-none absolute inset-0 size-full object-cover opacity-20"
             loading="lazy"
@@ -162,8 +162,8 @@
 
                 <figure class="mt-8 overflow-hidden rounded-3xl" data-reveal="right">
                     <img
-                        src="{{ asset('images/site/clothing-racks.jpg') }}"
-                        alt="A broad assortment of apparel displayed on racks"
+                        src="{{ asset('images/wearhouse/wh-6.jpeg') }}"
+                        alt="A broad assortment of apparel inventory stored in the warehouse"
                         class="aspect-video w-full object-cover"
                         loading="lazy"
                     >

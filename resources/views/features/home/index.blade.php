@@ -39,13 +39,13 @@
             <div class="lg:col-span-5">
                 <figure class="relative overflow-hidden rounded-3xl border border-paper-100/15 shadow-2xl shadow-ink-950/40" data-reveal="right">
                     <img
-                        src="{{ asset('images/site/showroom-interior.jpg') }}"
-                        alt="Apparel showroom with garments hanging on display rails at B.Fern Apparel"
+                        src="{{ asset('images/wearhouse/wh-6.jpeg') }}"
+                        alt="Interior of the B.Fern Apparel warehouse with pallet racks of apparel inventory"
                         class="aspect-4/3 w-full object-cover"
                         fetchpriority="high"
                     >
                     <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/85 via-ink-950/30 to-transparent px-6 pb-5 pt-16 text-xs font-semibold uppercase tracking-[0.18em] text-paper-200">
-                        New York Showroom &middot; 525 Seventh Avenue
+                        Edison, New Jersey &middot; Warehouse Operations
                     </figcaption>
                 </figure>
 
@@ -80,24 +80,24 @@
                 <div class="grid grid-cols-2 gap-4">
                     <figure class="col-span-2 overflow-hidden rounded-3xl">
                         <img
-                            src="{{ asset('images/site/boutique-racks.jpg') }}"
-                            alt="Curated apparel on display rails in the B.Fern Apparel showroom"
+                            src="{{ asset('images/wearhouse/wh-6.jpeg') }}"
+                            alt="Organized warehouse aisles filled with pallet racks of apparel inventory"
                             class="aspect-16/10 w-full object-cover"
                             loading="lazy"
                         >
                     </figure>
                     <figure class="overflow-hidden rounded-2xl">
                         <img
-                            src="{{ asset('images/site/clothing-racks.jpg') }}"
-                            alt="Colorful garments arranged on racks"
+                            src="{{ asset('images/wearhouse/wh-2.jpeg') }}"
+                            alt="Trucks and shipping containers parked at the warehouse loading docks"
                             class="aspect-square w-full object-cover"
                             loading="lazy"
                         >
                     </figure>
                     <figure class="overflow-hidden rounded-2xl">
                         <img
-                            src="{{ asset('images/site/warehouse-team.jpg') }}"
-                            alt="Warehouse team preparing apparel shipments"
+                            src="{{ asset('images/wearhouse/wh-4.jpeg') }}"
+                            alt="B.Fern Apparel warehouse team standing among stocked pallet racks"
                             class="aspect-square w-full object-cover"
                             loading="lazy"
                         >
@@ -163,42 +163,44 @@
                             'title' => 'Authorized Purchasing',
                             'body' => 'We purchase merchandise overseas for 50 brands under formal agreements, with brand release letters accompanying every transaction.',
                             'icon' => 'badge',
-                            'image' => 'images/site/textile-factory.jpg',
-                            'alt' => 'Garment production line preparing apparel for authorized overseas purchasing',
+                            'image' => 'images/wearhouse/wh-5.jpeg',
+                            'alt' => 'Warehouse workers loading boxes onto a conveyor at the shipping dock',
                         ],
                         [
                             'title' => 'Apparel Liquidation',
                             'body' => 'Two decades of connecting leading brands with buyers, moving closeouts and excess inventory with professionalism and care.',
                             'icon' => 'boxes',
-                            'image' => 'images/site/warehouse-team.jpg',
-                            'alt' => 'Warehouse team carrying boxes of apparel ready for liquidation',
+                            'image' => 'images/wearhouse/wh-4.jpeg',
+                            'alt' => 'Warehouse team standing among boxes of apparel ready for liquidation',
                         ],
                         [
                             'title' => 'Full Category Coverage',
                             'body' => 'Men\'s, women\'s, and children\'s apparel across a diverse range of market segments and customer needs.',
                             'icon' => 'shirt',
-                            'image' => 'images/site/clothing-racks.jpg',
-                            'alt' => 'Assorted men\'s, women\'s, and children\'s apparel on rails',
+                            'image' => 'images/wearhouse/wh-6.jpeg',
+                            'alt' => 'Assorted apparel inventory stored across organized warehouse racks',
                         ],
                         [
                             'title' => 'Knit & Woven Expertise',
                             'body' => 'Broad product experience in knit and woven garments, giving us the range to serve varied programs.',
                             'icon' => 'thread',
-                            'image' => 'images/site/coat-rack.jpg',
-                            'alt' => 'Close-up of knit and woven garments on wooden hangers',
+                            'image' => 'images/wearhouse/wh-2.jpeg',
+                            'alt' => 'Containers and trailers lined up at the warehouse loading docks',
                         ],
                     ];
                 @endphp
 
                 @foreach ($services as $service)
                     <article class="group flex flex-col overflow-hidden rounded-2xl border border-paper-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-navy-600/60 hover:shadow-lg hover:shadow-ink-950/5" data-reveal="up">
-                        <div class="relative aspect-16/10 overflow-hidden bg-paper-100">
-                            <img
-                                src="{{ asset($service['image']) }}"
-                                alt="{{ $service['alt'] }}"
-                                class="size-full object-cover transition duration-500 group-hover:scale-105"
-                                loading="lazy"
-                            >
+                        <div class="relative">
+                            <div class="aspect-16/10 overflow-hidden bg-paper-100">
+                                <img
+                                    src="{{ asset($service['image']) }}"
+                                    alt="{{ $service['alt'] }}"
+                                    class="size-full object-cover transition duration-500 group-hover:scale-105"
+                                    loading="lazy"
+                                >
+                            </div>
                             <span class="absolute -bottom-5 left-6 grid size-11 place-items-center rounded-full bg-white text-navy-700 shadow-md shadow-ink-950/10">
                                 @if ($service['icon'] === 'badge')
                                     <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
@@ -283,9 +285,9 @@
 
             @php
                 $locationImages = [
-                    ['image' => 'images/site/showroom-interior.jpg', 'alt' => 'Bright apparel showroom interior with garment rails'],
-                    ['image' => 'images/site/new-york-skyline.jpg', 'alt' => 'Midtown Manhattan skyline near the B.Fern Apparel office'],
-                    ['image' => 'images/site/warehouse-aisle.jpg', 'alt' => 'Organized warehouse aisles holding apparel inventory'],
+                    ['image' => 'images/wearhouse/wh-1.jpeg', 'alt' => 'Exterior of the B.Fern Apparel facility with loading docks'],
+                    ['image' => 'images/wearhouse/wh-3.jpeg', 'alt' => 'Trailers lined up at the B.Fern Apparel loading docks'],
+                    ['image' => 'images/wearhouse/wh-2.jpeg', 'alt' => 'Organized warehouse docks holding apparel inventory'],
                 ];
             @endphp
 
@@ -334,10 +336,10 @@
 
             @php
                 $gallery = [
-                    ['image' => 'images/site/team-meeting.jpg', 'title' => 'Our team', 'caption' => 'Coordinating programs across markets'],
-                    ['image' => 'images/site/textile-factory.jpg', 'title' => 'Overseas production', 'caption' => 'Working directly with manufacturing partners'],
-                    ['image' => 'images/site/warehouse-aisle.jpg', 'title' => 'Warehouse operations', 'caption' => 'Organized handling and fulfillment'],
-                    ['image' => 'images/site/showroom-interior.jpg', 'title' => 'New York showroom', 'caption' => '525 Seventh Avenue, Manhattan'],
+                    ['image' => 'images/wearhouse/wh-4.jpeg', 'title' => 'Our team', 'caption' => 'Coordinating programs across markets'],
+                    ['image' => 'images/wearhouse/wh-5.jpeg', 'title' => 'Receiving & loading', 'caption' => 'Merchandise moving through the dock'],
+                    ['image' => 'images/wearhouse/wh-6.jpeg', 'title' => 'Warehouse operations', 'caption' => 'Organized handling and fulfillment'],
+                    ['image' => 'images/wearhouse/wh-1.jpeg', 'title' => 'Edison facility', 'caption' => 'Exterior of our New Jersey warehouse'],
                 ];
             @endphp
 

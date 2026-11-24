@@ -6,7 +6,7 @@
 
 <section class="relative overflow-hidden bg-navy-700 text-paper-50">
     <img
-        src="{{ asset('images/site/warehouse-aisle.jpg') }}"
+        src="{{ asset('images/wearhouse/wh-6.jpeg') }}"
         alt=""
         class="pointer-events-none absolute inset-0 size-full object-cover opacity-15"
         loading="lazy"

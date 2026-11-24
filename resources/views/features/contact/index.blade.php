@@ -9,8 +9,8 @@
         'eyebrow' => 'Contact',
         'title' => 'Let\'s talk apparel',
         'description' => 'Whether you are sourcing merchandise or looking to move inventory, share a few details and our team will follow up.',
-        'image' => 'images/site/team-meeting.jpg',
-        'imageAlt' => 'B.Fern Apparel team meeting with industry partners',
+        'image' => 'images/wearhouse/wh-4.jpeg',
+        'imageAlt' => 'B.Fern Apparel warehouse team standing among stocked pallet racks',
     ])
 
     <section class="bg-paper-50 py-20 lg:py-28">
@@ -118,8 +118,8 @@
                 <div class="overflow-hidden rounded-3xl border border-paper-200 bg-paper-100/70">
                     <figure class="aspect-16/9 overflow-hidden bg-paper-100">
                         <img
-                            src="{{ asset('images/site/showroom-interior.jpg') }}"
-                            alt="Interior of the B.Fern Apparel New York showroom"
+                            src="{{ asset('images/wearhouse/wh-1.jpeg') }}"
+                            alt="Exterior of the B.Fern Apparel warehouse and operations facility"
                             class="size-full object-cover"
                             loading="lazy"
                         >
