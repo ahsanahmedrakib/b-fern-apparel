@@ -4,6 +4,7 @@ namespace App\Features\Teams\Services;
 
 use App\Features\Teams\Models\TeamMember;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Storage;
 
 class TeamMemberSeedService
 {
@@ -29,32 +30,54 @@ class TeamMemberSeedService
     }
 
     /**
-     * Seed the default members when the admin has not created any yet.
+     * Ensure every bundled member exists with a committed photo.
      *
-     * This runs on every request (see AppServiceProvider) so a fresh deploy
-     * with an empty table — or one whose uploads were wiped — still shows the
-     * bundled team instead of an empty section.
+     * Runs on every request (see AppServiceProvider) so a deploy that wipes
+     * uploads restores the bundled photos without duplicating or removing
+     * members added from the admin panel.
      */
     public function seedMissing(): void
     {
-        if (! Schema::hasTable('team_members') || TeamMember::query()->exists()) {
-            return;
-        }
-
-        $this->seed();
+        $this->syncBundledMembers();
     }
 
     public function seed(): void
     {
+        $this->syncBundledMembers();
+    }
+
+    private function syncBundledMembers(): void
+    {
+        if (! Schema::hasTable('team_members')) {
+            return;
+        }
+
+        $existingMembers = TeamMember::query()->get()->keyBy(
+            fn (TeamMember $member): string => $this->normalizeName($member->name),
+        );
+
         foreach ($this->members() as $member) {
-            TeamMember::query()->firstOrCreate(
-                ['photo' => $member['photo']],
-                [
+            $existing = $existingMembers->get($this->normalizeName($member['name']));
+
+            if ($existing === null) {
+                TeamMember::query()->create([
                     'name' => $member['name'],
                     'position' => $member['position'],
+                    'photo' => $member['photo'],
                     'is_active' => true,
-                ],
-            );
+                ]);
+
+                continue;
+            }
+
+            if (! Storage::disk('teams')->exists($existing->photo)) {
+                $existing->update(['photo' => $member['photo']]);
+            }
         }
+    }
+
+    private function normalizeName(string $name): string
+    {
+        return preg_replace('/[^a-z0-9]/', '', mb_strtolower($name)) ?? '';
     }
 }

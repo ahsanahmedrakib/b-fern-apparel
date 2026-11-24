@@ -50,8 +50,8 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Restore the bundled team members when the admin has none, so a deploy
-     * that resets uploaded photos never leaves the public team pages empty.
+     * Restore bundled team members and their photos after a deploy resets
+     * uploads, without duplicating members added from the admin panel.
      */
     protected function ensureTeamMembersExist(): void
     {
