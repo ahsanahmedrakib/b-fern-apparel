@@ -137,7 +137,7 @@ CREATE TABLE `team_members` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `team_members` (`name`, `position`, `photo`, `created_at`, `updated_at`) VALUES
-  ('Jeffrey Charen', 'Vice President', 'jeffrey-charen.jpg', NOW(), NOW()),
+  ('Jeffrey Charen', 'President', 'jeffrey-charen.jpg', NOW(), NOW()),
   ('Md. Akmol Hossain Raki', 'QC Staffs', 'akmol-hossain-raki.jpeg', NOW(), NOW()),
   ('Md. Al Shakib', 'QC Staffs', 'al-shakib.jpeg', NOW(), NOW()),
   ('Md. Fazlul Huque (Shopon)', 'QC Staffs', 'fazlul-huque.jpeg', NOW(), NOW()),

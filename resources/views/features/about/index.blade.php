@@ -69,7 +69,7 @@
         </div>
     </section>
 
-    {{-- Vice President's message --}}
+    {{-- President's message --}}
     <section class="border-y border-paper-200 bg-white py-20 lg:py-28">
         <div class="container-page grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div class="lg:col-span-5" data-reveal="left">
@@ -84,7 +84,7 @@
             </div>
 
             <div class="lg:col-span-7" data-reveal="right">
-                <p class="eyebrow text-navy-600">Message from our Vice President</p>
+                <p class="eyebrow text-navy-600">Message from our President</p>
                 <h2 class="display mt-5 text-3xl leading-tight text-ink-950 sm:text-4xl">
                     {{ config('bfern.vice_president_message.heading') }}
                 </h2>

@@ -16,7 +16,7 @@ class TeamMemberSeedService
     public function members(): array
     {
         return [
-            ['name' => 'Jeffrey Charen', 'position' => 'Vice President', 'photo' => 'jeffrey-charen.jpg'],
+            ['name' => 'Jeffrey Charen', 'position' => 'President', 'photo' => 'jeffrey-charen.jpg'],
             ['name' => 'Md. Akmol Hossain Raki', 'position' => 'QC Staffs', 'photo' => 'akmol-hossain-raki.jpeg'],
             ['name' => 'Md. Al Shakib', 'position' => 'QC Staffs', 'photo' => 'al-shakib.jpeg'],
             ['name' => 'Md. Fazlul Huque (Shopon)', 'position' => 'QC Staffs', 'photo' => 'fazlul-huque.jpeg'],

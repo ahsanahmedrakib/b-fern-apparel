@@ -22,7 +22,7 @@ return [
 
     'vice_president_message' => [
         'name' => 'Jeffrey Charen',
-        'title' => 'Vice President',
+        'title' => 'President',
         'photo' => 'images/teams/jeffrey-charen.jpg',
         'heading' => 'Trust, built one shipment at a time',
         'body' => [
