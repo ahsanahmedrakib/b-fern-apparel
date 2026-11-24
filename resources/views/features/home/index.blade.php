@@ -44,7 +44,7 @@
                         class="aspect-4/3 w-full object-cover"
                         fetchpriority="high"
                     >
-                    <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/85 via-ink-950/30 to-transparent px-6 pb-5 pt-16 text-xs font-semibold uppercase tracking-[0.18em] text-paper-200">
+                    <figcaption class="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink-950/85 via-ink-950/30 to-transparent px-6 pb-5 pt-16 text-xs font-semibold uppercase tracking-[0.18em] text-paper-200">
                         Edison, New Jersey &middot; Warehouse Operations
                     </figcaption>
                 </figure>
@@ -352,7 +352,7 @@
                             class="aspect-4/5 w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
                             loading="lazy"
                         >
-                        <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/90 via-ink-950/35 to-transparent p-5 pt-16">
+                        <figcaption class="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink-950/90 via-ink-950/35 to-transparent p-5 pt-16">
                             <p class="font-display text-lg font-semibold text-paper-50">{{ $shot['title'] }}</p>
                             <p class="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-paper-300/80">{{ $shot['caption'] }}</p>
                         </figcaption>
@@ -361,8 +361,6 @@
             </div>
         </div>
     </section>
-
-    @include('features.teams.swiper', ['teamMembers' => $teamMembers])
 
     @include('partials.cta', [
         'title' => 'Ready to move apparel merchandise?',

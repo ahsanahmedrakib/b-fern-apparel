@@ -37,7 +37,7 @@
                             class="aspect-4/3 w-full object-cover"
                             fetchpriority="high"
                         >
-                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/40 via-transparent to-transparent" aria-hidden="true"></div>
+                        <div class="pointer-events-none absolute inset-0 bg-linear-to-t from-ink-950/40 via-transparent to-transparent" aria-hidden="true"></div>
                     </div>
                 </div>
             @endif

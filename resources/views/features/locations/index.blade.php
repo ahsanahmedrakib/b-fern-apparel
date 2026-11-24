@@ -76,7 +76,7 @@
                             class="absolute inset-0 size-full object-cover"
                             loading="lazy"
                         >
-                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/50 to-transparent lg:bg-gradient-to-r" aria-hidden="true"></div>
+                        <div class="pointer-events-none absolute inset-0 bg-linear-to-t from-ink-950/50 to-transparent lg:bg-linear-to-r" aria-hidden="true"></div>
                     </div>
 
                     <div class="p-8 lg:col-span-7 lg:p-12">
