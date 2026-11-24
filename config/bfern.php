@@ -22,7 +22,7 @@ return [
 
     'vice_president_message' => [
         'name' => 'Brad Fern',
-        'title' => 'President',
+        'title' => 'President of B.Fern Apparel Inc',
         'photo' => 'images/teams/brad-fern.jpg',
         'heading' => 'Trust, built one shipment at a time',
         'body' => [

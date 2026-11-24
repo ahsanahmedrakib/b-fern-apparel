@@ -12,7 +12,7 @@
         loading="lazy"
         aria-hidden="true"
     >
-    <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy-700 via-navy-700/90 to-navy-700/55" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-0 bg-linear-to-r from-navy-700 via-navy-700/90 to-navy-700/55" aria-hidden="true"></div>
     <div class="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-paper-50/10 blur-3xl" aria-hidden="true"></div>
 
     <div class="container-page relative flex flex-col items-start gap-8 py-16 lg:flex-row lg:items-center lg:justify-between lg:py-20" data-reveal>
