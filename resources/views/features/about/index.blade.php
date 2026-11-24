@@ -114,7 +114,7 @@
             loading="lazy"
             aria-hidden="true"
         >
-        <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/50" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute inset-0 bg-linear-to-r from-ink-950 via-ink-950/85 to-ink-950/50" aria-hidden="true"></div>
         <div class="pointer-events-none absolute -right-24 top-0 size-96 rounded-full bg-navy-600/20 blur-3xl" aria-hidden="true"></div>
 
         <div class="container-page relative grid gap-12 lg:grid-cols-12 lg:items-center">
@@ -164,7 +164,7 @@
                     <img
                         src="{{ asset('images/site/clothing-racks.jpg') }}"
                         alt="A broad assortment of apparel displayed on racks"
-                        class="aspect-16/9 w-full object-cover"
+                        class="aspect-video w-full object-cover"
                         loading="lazy"
                     >
                 </figure>

@@ -16,13 +16,15 @@ class TeamMemberSeedService
     public function members(): array
     {
         return [
-            ['name' => 'Jeffrey Charen', 'position' => 'President', 'photo' => 'jeffrey-charen.jpg'],
+            ['name' => 'Brad Fern', 'position' => 'President', 'photo' => 'brad-fern.jpg'],
             ['name' => 'Md. Akmol Hossain Raki', 'position' => 'QC Staffs', 'photo' => 'akmol-hossain-raki.jpeg'],
             ['name' => 'Md. Al Shakib', 'position' => 'QC Staffs', 'photo' => 'al-shakib.jpeg'],
             ['name' => 'Md. Fazlul Huque (Shopon)', 'position' => 'QC Staffs', 'photo' => 'fazlul-huque.jpeg'],
             ['name' => 'Md. Ibrahim', 'position' => 'QC Staffs', 'photo' => 'ibrahim.jpeg'],
             ['name' => 'Robiul Islam Hiron', 'position' => 'QC Staffs', 'photo' => 'robiul-islam-hiron.jpeg'],
             ['name' => 'Md. Sobuz Mia', 'position' => 'QC Staffs', 'photo' => 'sobuz-mia.jpeg'],
+            ['name' => 'S.M. Nure Azam', 'position' => 'QC Staffs', 'photo' => 's-m-nure-azam.jpeg'],
+            ['name' => 'Md. Abdul Kader', 'position' => 'QC Staffs', 'photo' => 'md-abdul-kader.jpeg'],
         ];
     }
 

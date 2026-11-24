@@ -137,13 +137,15 @@ CREATE TABLE `team_members` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `team_members` (`name`, `position`, `photo`, `created_at`, `updated_at`) VALUES
-  ('Jeffrey Charen', 'President', 'jeffrey-charen.jpg', NOW(), NOW()),
+  ('Brad Fern', 'President', 'brad-fern.jpg', NOW(), NOW()),
   ('Md. Akmol Hossain Raki', 'QC Staffs', 'akmol-hossain-raki.jpeg', NOW(), NOW()),
   ('Md. Al Shakib', 'QC Staffs', 'al-shakib.jpeg', NOW(), NOW()),
   ('Md. Fazlul Huque (Shopon)', 'QC Staffs', 'fazlul-huque.jpeg', NOW(), NOW()),
   ('Md. Ibrahim', 'QC Staffs', 'ibrahim.jpeg', NOW(), NOW()),
   ('Robiul Islam Hiron', 'QC Staffs', 'robiul-islam-hiron.jpeg', NOW(), NOW()),
-  ('Md. Sobuz Mia', 'QC Staffs', 'sobuz-mia.jpeg', NOW(), NOW());
+  ('Md. Sobuz Mia', 'QC Staffs', 'sobuz-mia.jpeg', NOW(), NOW()),
+  ('S.M. Nure Azam', 'QC Staffs', 's-m-nure-azam.jpeg', NOW(), NOW()),
+  ('Md. Abdul Kader', 'QC Staffs', 'md-abdul-kader.jpeg', NOW(), NOW());
 
 DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
