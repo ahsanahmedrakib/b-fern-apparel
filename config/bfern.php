@@ -20,15 +20,30 @@ return [
 
     'boilerplate' => 'B.Fern Apparel is a leading U.S. apparel liquidator with 20+ years of experience, authorized relationships with 50 brands, and an international network across Asia, North Africa, and the Middle East, with a showroom at 525 Seventh Avenue, New York.',
 
-    'vice_president_message' => [
-        'name' => 'Brad Fern',
-        'title' => 'President of B.Fern Apparel Inc',
-        'photo' => 'images/teams/brad-fern.jpg',
-        'heading' => 'Trust, built one shipment at a time',
-        'body' => [
-            'For more than two decades, our promise has stayed the same: treat every brand, every buyer, and every shipment with the care we would expect for our own business. That commitment is what turns a single transaction into a relationship that lasts for years.',
-            'We are proud of the trust our brand partners place in us and of the buyers who rely on our team for quality, consistency, and integrity. As we continue to grow across markets, we remain focused on the details that matter — authorized sourcing, dependable communication, and merchandise that meets expectations.',
-            'Thank you for being part of the B.Fern Apparel story. We look forward to what we will build together next.',
+    'leadership_messages' => [
+        [
+            'eyebrow' => 'Message from our President',
+            'name' => 'Brad Fern',
+            'title' => 'President of B.Fern Apparel Inc',
+            'photo' => 'images/teams/brad-fern.jpg',
+            'heading' => 'Trust, built one shipment at a time',
+            'body' => [
+                'For more than two decades, our promise has stayed the same: treat every brand, every buyer, and every shipment with the care we would expect for our own business. That commitment is what turns a single transaction into a relationship that lasts for years.',
+                'We are proud of the trust our brand partners place in us and of the buyers who rely on our team for quality, consistency, and integrity. As we continue to grow across markets, we remain focused on the details that matter — authorized sourcing, dependable communication, and merchandise that meets expectations.',
+                'Thank you for being part of the B.Fern Apparel story. We look forward to what we will build together next.',
+            ],
+        ],
+        [
+            'eyebrow' => 'Message from our Vice President (Sales)',
+            'name' => 'Jeffrey Charen',
+            'title' => 'Vice President (Sales)',
+            'photo' => 'images/teams/jeffrey-charen.jpeg',
+            'heading' => 'Sales built on trust and follow-through',
+            'body' => [
+                'At B.Fern Apparel, every sale begins with listening. We take the time to understand what our buyers are looking for, then respond with clear information, dependable availability, and a realistic view of what we can deliver.',
+                'Our customers stay with us because we do what we say we will do. From the first inquiry to the final shipment, our sales team focuses on responsive communication, consistent quality, and the kind of service that makes doing business easier.',
+                'I am proud to work alongside a team that values long-term relationships over short-term wins. Whether you are a longtime partner or considering B.Fern Apparel for the first time, we appreciate the opportunity to earn your trust.',
+            ],
         ],
     ],
 
